@@ -27,7 +27,7 @@ class TodoList extends Component {
 TodoList.propTypes = {
   allTodos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      completetd: PropTypes.bool,
       content: PropTypes.string,
     })
   ),
@@ -38,7 +38,8 @@ const mapDispatchToprops = dispatch => {
 };
 
 const mapStateToProps = state => {
-  const { allTodos } = state.todos || {};
+  const todoState = state.todos.toJS();
+  const { allTodos } = todoState;
   return { allTodos };
 };
 

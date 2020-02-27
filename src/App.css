@@ -3,7 +3,6 @@ body {
   margin-top: 2rem;
 }
 .tasker ul, .tasker li,
-.tasker button,
 .tasker input {
   padding: 1px 1px 1px 1px;
   margin: 1px 1px 1px 1px;
@@ -24,10 +23,10 @@ body {
   background: #E6FFEB;
 }
 .tasker li,
-.tasker button,
 .tasker input {
   font: 18px/1.25em 'Lato', sans-serif;
 }
+
 .todo-header {
   display: inline-flex;
   background: #B6B6B6;

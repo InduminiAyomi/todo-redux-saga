@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Todo = ({ todo }) => (
-  <li>
-    <span>{todo.content}</span>
-  </li>
-);
+const Todo = ({ todo }) => {
+  const { content } = todo || {};
+  return (
+    <li>
+      <input type='checkbox' />
+      <span> {content} </span>
+    </li>
+  );
+};
 
 Todo.propTypes = {
   id: PropTypes.string,

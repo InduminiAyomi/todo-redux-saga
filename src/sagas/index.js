@@ -7,7 +7,7 @@ function* fetchTodos() {
     'http://reduxblog.herokuapp.com/api/posts?key=edgar1234'
   );
 
-  yield put({ type: 'TODOS_RECEIVED', todos: json.data });
+  yield put({ type: 'TODOS_RECEIVED', payload: json.data });
 }
 
 function* actionWatcher() {
@@ -15,7 +15,7 @@ function* actionWatcher() {
 }
 
 export function* formatTodo(action) {
-  const newTodo = { title: '', categories: '', content: action.payload };
+  const newTodo = { completed: false, content: action.payload };
   yield call(
     axios.post,
     'http://reduxblog.herokuapp.com/api/posts?key=edgar1234',
