@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchTodos } from '../actions';
+import { getTodoState } from '../selectors';
 import Todo from './Todo';
 
 const TodoList = ({ allTodos }) => {
@@ -32,8 +33,10 @@ const mapDispatchToprops = dispatch => {
 
 const mapStateToProps = state => {
   const todoState = state.todos.toJS();
-  const { allTodos } = todoState;
-  return { allTodos };
+
+  return {
+    allTodos: getTodoState(todoState),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToprops)(TodoList);
