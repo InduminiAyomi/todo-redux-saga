@@ -8,7 +8,7 @@ import Todo from './Todo';
 
 const TodoList = ({ allTodos }) => {
   return (
-    <ul>
+    <ul className='list-group'>
       {allTodos && allTodos.length
         ? allTodos.map((todo, index) => {
             return <Todo key={index} todo={todo} />;

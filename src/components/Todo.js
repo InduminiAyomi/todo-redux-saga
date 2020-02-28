@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 const Todo = ({ todo }) => {
   const { content } = todo || {};
   if (content.trim()) {
-    return (
-      <li className="todo-item">
-        <input type='checkbox' />
-        <span> {content} </span>
-      </li>
-    );
+    return <li className='list-group-item'>{content}</li>;
   }
   return null;
 };

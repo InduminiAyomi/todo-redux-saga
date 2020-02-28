@@ -9,6 +9,7 @@ class AddTodo extends React.Component {
     this.state = { input: '' };
     this.handleAddTodo = this.handleAddTodo.bind(this);
     this.handleAddTodoFromService = this.handleAddTodoFromService.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateInput = input => {
@@ -28,23 +29,44 @@ class AddTodo extends React.Component {
     this.setState({ input: '' });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+  };
+
   render() {
     return (
-      <div className='todo-header'>
-        <input
-          type='text'
-          className='input-task'
-          placeholder='Enter your todo'
-          onChange={e => this.updateInput(e.target.value)}
-          value={this.state.input}
-        />
-        <button className='add-task' onClick={this.handleAddTodo}>
-          Add
-        </button>
-        <button onClick={this.handleAddTodoFromService}>
-          Add from Service
-        </button>
-      </div>
+      <>
+        <div className='row'>
+          <div className='col-md-6'>
+            <form onSubmit={this.handleSubmit}>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  className='form-control'
+                  id='input-todo'
+                  placeholder='Add your todo'
+                  onChange={e => this.updateInput(e.target.value)}
+                  value={this.state.input}
+                />
+              </div>
+            </form>
+          </div>
+          <div className='col-md-6'>
+            <button
+              type='button'
+              className='btn btn-outline-dark'
+              onClick={this.handleAddTodo}>
+              Add
+            </button>{' '}
+            <button
+              type='button'
+              className='btn btn-outline-dark'
+              onClick={this.handleAddTodoFromService}>
+              Add form Service
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }
