@@ -1,4 +1,4 @@
-import { put, takeLatest, takeEvery, all, call } from 'redux-saga/effects';
+import { put, takeLatest, all, call } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* fetchTodos() {
@@ -6,29 +6,13 @@ function* fetchTodos() {
     axios.get,
     'http://reduxblog.herokuapp.com/api/posts?key=edgar1234'
   );
-
   yield put({ type: 'TODOS_RECEIVED', payload: json.data });
 }
 
 function* actionWatcher() {
-  yield takeLatest('GET_TODOS', fetchTodos);
-}
-
-export function* formatTodo(action) {
-  const newTodo = { completed: false, content: action.payload };
-  yield call(
-    axios.post,
-    'http://reduxblog.herokuapp.com/api/posts?key=edgar1234',
-    newTodo
-  );
-
-  yield put({ type: 'GET_TODOS' });
-}
-
-function* watchAddToDo() {
-  yield takeEvery('ADD_TODO', formatTodo);
+  yield takeLatest('FETCH_TODOS', fetchTodos);
 }
 
 export default function* rootSaga() {
-  yield all([actionWatcher(), watchAddToDo()]);
+  yield all([actionWatcher()]);
 }

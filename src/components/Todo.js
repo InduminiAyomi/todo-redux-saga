@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 const Todo = ({ todo }) => {
   const { content } = todo || {};
-  return (
-    <li>
-      <input type='checkbox' />
-      <span> {content} </span>
-    </li>
-  );
+  if (content.trim()) {
+    return (
+      <li className="todo-item">
+        <input type='checkbox' />
+        <span> {content} </span>
+      </li>
+    );
+  }
+  return null;
 };
 
 Todo.propTypes = {
