@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
     case ADD_TODO:
       state = state.updateIn(['allTodos'], todos =>
         todos.push({
-          content: action.payload,
+          content: action.playload,
         })
       );
       state = state.set('isLoading', false);
@@ -28,7 +28,7 @@ export default function(state = initialState, action) {
       return state.set('isLoading', true);
     case TODOS_RECEIVED:
       state = state.updateIn(['allTodos'], todos =>
-        todos.concat(action.payload)
+        todos.concat(action.playload)
       );
       state = state.set('isLoading', false);
       return state;

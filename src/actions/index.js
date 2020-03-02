@@ -5,7 +5,7 @@ import {
 
 export const addTodo = content => ({
   type: ADD_TODO,
-  payload: content,
+  playload: content,
 });
 
 export const fetchTodosFromService = () => ({
