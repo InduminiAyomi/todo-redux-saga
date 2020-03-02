@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addTodo, fetchTodos } from '../actions';
+import { addTodo, fetchTodosFromService } from '../actions';
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class AddTodo extends React.Component {
   };
 
   handleAddTodoFromService = () => {
-    this.props.fetchTodos();
+    this.props.fetchTodosFromService();
     this.setState({ input: '' });
   };
 
@@ -72,7 +72,7 @@ class AddTodo extends React.Component {
 }
 
 const mapDispatchToprops = dispatch => {
-  return bindActionCreators({ addTodo, fetchTodos }, dispatch);
+  return bindActionCreators({ addTodo, fetchTodosFromService }, dispatch);
 };
 
 export default connect(null, mapDispatchToprops)(AddTodo);

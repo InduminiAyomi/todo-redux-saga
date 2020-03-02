@@ -11,7 +11,7 @@ const Todo = ({ todo }) => {
 
 Todo.propTypes = {
   id: PropTypes.string,
-  text: PropTypes.string,
+  content: PropTypes.string,
 };
 
 export default Todo;
