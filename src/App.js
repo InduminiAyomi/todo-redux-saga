@@ -11,7 +11,7 @@ const App = () => {
           <AddTodo />
         </div>
         <div className='row-md-6'>
-        <TodoList />
+          <TodoList />
         </div>
       </div>
     </div>

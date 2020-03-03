@@ -1,4 +1,4 @@
 export const ADD_TODO = 'ADD_TODO';
 export const FETCH_TODOS_FROM_SERVICE = 'FETCH_TODOS_FROM_SERVICE';
 export const TODOS_RECEIVED = 'TODOS_RECEIVED';
-
+export const TOGGLE_TODO = 'TOGGLE_TODO';

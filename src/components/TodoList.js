@@ -11,7 +11,7 @@ const TodoList = ({ allTodos, isLoading }) => {
       <ul className='list-group'>
         {allTodos && allTodos.length
           ? allTodos.map((todo, index) => {
-              return <Todo key={index} todo={todo} />;
+              return <Todo key={index} id={index} todo={todo} />;
             })
           : 'No Todos 😉 '}
       </ul>
