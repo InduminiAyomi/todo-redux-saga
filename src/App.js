@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
+import FilterTodos from './components/FilterTodos';
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
         </div>
         <div className='row-md-6'>
           <TodoList />
+        </div>
+        <div className='row-md-6'>
+          <FilterTodos />
         </div>
       </div>
     </div>

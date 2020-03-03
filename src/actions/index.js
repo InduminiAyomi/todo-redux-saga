@@ -13,3 +13,9 @@ export const toggleTodo = id => ({
   type: TOGGLE_TODO,
   playload: id,
 });
+
+export const filterTodos = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE',
+};
